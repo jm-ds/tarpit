@@ -11,7 +11,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - docker run --name threatrix-threat-agent -v $(pwd):/app threatrix/threat-agent ./
+      - curl -sSL https://raw.githubusercontent.com/threatrix/distribution/master/threatagent-docker.sh | sh
       - mvn package
 artifacts:
   files:
