@@ -11,7 +11,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - docker run --rm --name threatrix-threat-agent -v $(pwd):/app threatrix/threat-agent --api-url=--oid= --eid= --api-key=   $RELATIVE_PATH_TO_PROJECT
+      - docker run --rm --name threatrix-threat-agent -v $(pwd):/app threatrix/threat-agent ./
       - mvn package
 artifacts:
   files:
